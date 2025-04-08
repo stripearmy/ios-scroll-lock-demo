@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html class="no-js isl_simple_html">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no"/>
+    <link href="css/isl.min.css" media="all" rel="stylesheet" type="text/css"/>
+    <link href="css/main.min.css" media="all" rel="stylesheet" type="text/css"/>
+    <title>ios-scroll-lock demo</title>
+</head>
+<body>
+
+<div class="isl_simple">
+    <div class="isl_simple_scroll">The body is scrollable and content height is 5000px</div>
+    <button class="isl_simple_btn" onclick="toggleSimple()">Toggle Modal</button>
+</div>
+
+<div class='isl_holder isl_holder--simple'>
+    <div class='isl_scroller'>
+        <div class='isl_scroller_inner'>
+            <div class='isl_scroller_content'>
+                <div class="isl_simple_modal">
+                    <div class="isl_simple_modal_header">
+                        Modal Title
+                    </div>
+                    <div class="isl_simple_modal_body">
+                        Do you want to proceed?
+                    </div>
+                    <div class="isl_simple_modal_footer">
+                        <button class="isl_simple_modal_btn isl_simple_modal_btn--confirm" onclick="toggleSimple()">Confirm</button>
+                        <button class="isl_simple_modal_btn isl_simple_modal_btn--cancel" onclick="toggleSimple()">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    const islHolder = document.querySelector('.isl_holder');
+    const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+
+    function setIOSHeight() {
+        document.documentElement.style.setProperty('--isl-vh', window.innerHeight * .01 + 'px');
+    }
+
+    if (isIOS) {
+        setIOSHeight();
+        window.addEventListener('resize', setIOSHeight);
+    }
+
+    function toggleSimple() {
+        document.documentElement.classList.toggle('simple-open');
+        islHolder.classList.toggle('isl_holder--open');
+
+        if (islHolder.classList.contains('isl_holder--open')) {
+            menuTriggerTopOpen.beginElement();
+            menuTriggerBottomOpen.beginElement();
+        } else {
+            menuTriggerTopClose.beginElement();
+            menuTriggerBottomClose.beginElement();
+        }
+    }
+</script>
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript" >
+   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+   m[i].l=1*new Date();
+   for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+   k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+   ym(100834414, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true
+   });
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/100834414" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+
+
+</body>
+</html>
