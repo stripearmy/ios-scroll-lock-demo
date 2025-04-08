@@ -256,7 +256,7 @@ html.isl_simple_html body {
     justify-content: flex-start;
     align-items: stretch;
     width: 300px;
-    height: min(600px, 100%);
+    max-height: min(600px, 100%);
     margin: auto;
     background: antiquewhite;
     border-radius: var(--simple-border-radius);
