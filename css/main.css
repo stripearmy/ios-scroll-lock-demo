@@ -53,6 +53,10 @@ table caption, table th, table td {
     vertical-align: middle;
 }
 
+a {
+    color: #00acb6;
+}
+
 a img {
     border: 0;
 }
@@ -62,7 +66,20 @@ a img {
 }
 
 html, body {
+    color-scheme: light;
     background: #FFF;
+}
+
+@keyframes rainbow {
+    0% {
+        background-position: 0% 82%
+    }
+    50% {
+        background-position: 100% 19%
+    }
+    100% {
+        background-position: 0% 82%
+    }
 }
 
 :root {
@@ -113,9 +130,9 @@ html, body {
     aspect-ratio: 1;
     width: unset;
     min-width: unset;
-    background: none;
     outline: none;
     border: none;
+    background: none;
     appearance: none;
     padding: 0;
     color: currentColor;
@@ -127,6 +144,12 @@ html, body {
 .isl_apple_header_btn:not(.isl_apple_header_btn--ignore) {
     opacity: var(--apple-header-opacity);
     pointer-events: var(--apple-header-pointer);
+}
+
+.isl_apple_header_btn--ignore {
+    animation: rainbow 18s ease infinite;
+    background: linear-gradient(124deg, #ff2400, #e81d1d, #e8b71d, #e3e81d, #1de840, #1ddde8, #2b1de8, #dd00f3, #dd00f3);
+    background-size: 1800% 1800%;
 }
 
 #root {
@@ -141,10 +164,25 @@ html, body {
     --apple-header-opacity: 0;
 }
 
+.apple-website-img-holder {
+    position: relative;
+}
+
 .apple-website-img {
     display: block;
     width: 100%;
     height: auto;
+}
+
+.apple-website-img-holder:after {
+    content: "";
+    display: block;
+    position: absolute;
+    inset: 0;
+    background-image: url("../img/screenshot.png");
+    background-size: contain;
+    background-repeat: repeat;
+    opacity: .5;
 }
 
 .menu {
@@ -186,11 +224,7 @@ html, body {
 html.isl_simple_html {
     background: linear-gradient(
             to bottom,
-            #ff5f6d,  /* Pinkish red */
-            #ffc371,  /* Orange-yellow */
-            #47cf73,  /* Green mint */
-            #00c6ff,  /* Sky blue */
-            #845ec2   /* Purple */
+            #ff5f6d, /* Pinkish red */ #ffc371, /* Orange-yellow */ #47cf73, /* Green mint */ #00c6ff, /* Sky blue */ #845ec2 /* Purple */
     );
 }
 
@@ -310,13 +344,13 @@ html.isl_simple_html body {
     outline: none;
     color: inherit;
     font-weight: 700;
-    background-color: rgba(0,0,0,.05);
+    background-color: rgba(0, 0, 0, .05);
     transition: all .3s ease-in-out;
     cursor: pointer;
 }
 
 .isl_simple_modal_btn:hover {
-    background-color: rgba(0,0,0,.5);
+    background-color: rgba(0, 0, 0, .5);
     color: white;
 }
 
@@ -327,4 +361,82 @@ html.isl_simple_html body {
 .isl_simple_modal_btn:last-child {
     border-bottom-right-radius: var(--simple-border-radius);
 }
+
+.isl_holder.isl_holder--legal.isl_holder--open {
+    --isl-zIndex: 999999;
+}
+
+.isl_legal {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    padding: 12px 0 env(safe-area-inset-bottom, 12px) 0;
+    height: 100%;
+    overflow-y: auto;
+    row-gap: 12px;
+    margin: auto;
+}
+
+@media (pointer: fine) {
+    .isl_legal {
+        max-width: 400px;
+        max-height: max-content;
+    }
+}
+
+.isl_legal_body {
+    flex: 0 1 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    row-gap: 12px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 0 12px;
+    font-size: 18px;
+    line-height: 24px;
+    word-break: break-word;
+    margin: auto 0;
+}
+
+.isl_legal_footer {
+    flex: 0 0 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: stretch;
+    flex-wrap: nowrap;
+    margin-top: auto;
+}
+
+.isl_legal_btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 48px;
+    min-height: 48px;
+    font-size: 16px;
+    letter-spacing: .2px;
+    font-weight: 700;
+    flex: 1 1 0;
+    outline: none;
+    border: none;
+    appearance: none;
+    padding: 0;
+    cursor: pointer;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.isl_legal_btn--leave {
+    color: red;
+    background: rgba(255, 0, 0, 0.15);
+}
+
+.isl_legal_btn--accept {
+    color: green;
+    background: rgba(0, 128, 0, 0.15);
+}
+
 /*# sourceMappingURL=main.css.map */

@@ -13,15 +13,18 @@
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no"/>
     <link href="css/isl.min.css" media="all" rel="stylesheet" type="text/css"/>
-    <link href="css/main.min.css" media="all" rel="stylesheet" type="text/css"/>
+    <link href="css/main.css" media="all" rel="stylesheet" type="text/css"/>
     <title>ios-scroll-lock demo</title>
 </head>
 <body>
 <header class="isl_apple_header">
     <div class='isl_apple_header_start'>
         <button class="isl_apple_header_btn">
-            <svg height="48" viewBox="0 0 17 48" width="17" xmlns="http://www.w3.org/2000/svg">
-                <path d="m15.5752 19.0792a4.2055 4.2055 0 0 0 -2.01 3.5376 4.0931 4.0931 0 0 0 2.4908 3.7542 9.7779 9.7779 0 0 1 -1.2755 2.6351c-.7941 1.1431-1.6244 2.2862-2.8878 2.2862s-1.5883-.734-3.0443-.734c-1.42 0-1.9252.7581-3.08.7581s-1.9611-1.0589-2.8876-2.3584a11.3987 11.3987 0 0 1 -1.9373-6.1487c0-3.61 2.3464-5.523 4.6566-5.523 1.2274 0 2.25.8062 3.02.8062.734 0 1.8771-.8543 3.2729-.8543a4.3778 4.3778 0 0 1 3.6822 1.841zm-6.8586-2.0456a1.3865 1.3865 0 0 1 -.2527-.024 1.6557 1.6557 0 0 1 -.0361-.337 4.0341 4.0341 0 0 1 1.0228-2.5148 4.1571 4.1571 0 0 1 2.7314-1.4078 1.7815 1.7815 0 0 1 .0361.373 4.1487 4.1487 0 0 1 -.9867 2.587 3.6039 3.6039 0 0 1 -2.5148 1.3236z"></path>
+            <svg style='height: 36px; width: auto;' viewBox="0 0 871.000000 1280.000000" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+                <g transform="translate(0.000000,1280.000000) scale(0.100000,-0.100000)" fill="#000000" stroke="none">
+                    <path d="M5840 12710 c-467 -41 -936 -281 -1235 -629 -272 -319 -436 -718 -452 -1103 -6 -125 -5 -127 19 -151 18 -18 41 -27 82 -32 70 -9 288 10 415 36 786 160 1370 826 1431 1632 19 252 0 270 -260 247z"/>
+                    <path d="M4174 10521 c-2 -3 -19 -6 -37 -7 -90 -8 -138 -15 -162 -24 -15 -6 -31 -8 -35 -5 -5 3 -25 -1 -44 -9 -19 -8 -36 -12 -39 -10 -2 3 -17 -1 -33 -7 -16 -7 -32 -12 -36 -11 -4 1 -57 -16 -116 -37 -294 -105 -547 -265 -772 -491 -237 -236 -403 -504 -505 -814 -68 -204 -83 -294 -115 -671 -16 -196 -93 -486 -225 -855 -137 -382 -217 -530 -628 -1151 -394 -596 -548 -882 -652 -1214 -21 -66 -52 -160 -70 -210 -47 -129 -65 -291 -65 -595 0 -465 50 -787 187 -1205 306 -931 987 -1721 1867 -2161 285 -142 430 -178 721 -177 99 1 243 8 320 17 77 8 205 23 285 32 243 27 487 22 825 -17 328 -37 608 -45 745 -20 115 20 253 67 388 132 868 413 1571 1185 1896 2082 98 269 173 575 182 744 6 92 5 93 -23 122 -22 21 -43 30 -84 36 -29 3 -67 11 -84 15 -16 5 -70 14 -120 20 -49 7 -145 25 -213 41 -648 157 -1185 585 -1482 1181 -162 326 -234 634 -234 1003 0 360 69 660 223 980 93 193 221 383 369 546 106 117 122 145 122 212 0 32 -9 93 -19 135 -35 137 -50 239 -61 400 -6 86 -17 200 -26 252 -107 671 -542 1253 -1160 1550 -104 50 -317 128 -364 133 -14 2 -31 6 -37 10 -5 3 -28 9 -49 11 -21 3 -54 10 -73 15 -19 6 -38 8 -42 5 -5 -3 -28 0 -51 7 -40 11 -464 20 -474 10z"/>
+                </g>
             </svg>
         </button>
     </div>
@@ -106,10 +109,12 @@
 </header>
 
 <div id='root'>
-    <img class='apple-website-img' src='img/apple_screenshot.webp' alt=''/>
+    <div class='apple-website-img-holder'>
+        <img class='apple-website-img' src='img/apple_screenshot.webp' alt=''/>
+    </div>
 </div>
 
-<div class='isl_holder'>
+<div class='isl_holder isl_holder--main'>
     <div class='isl_scroller'>
         <div class='isl_scroller_inner'>
             <div class='isl_scroller_content'>
@@ -131,8 +136,31 @@
     </div>
 </div>
 
+<div class='isl_holder isl_holder--legal'>
+    <div class='isl_scroller'>
+        <div class='isl_scroller_inner'>
+            <div class='isl_scroller_content'>
+                <div class='isl_legal'>
+                    <div class='isl_legal_body'>
+                        <p>For educational purposes only.</p>
+                        <p>We use <b>Yandex Metrika</b> to understand how users interact with our website.</p>
+                        <p><b>Yandex Metrika</b> may collect information such as your IP address, browser type, and user behavior.</p>
+                        <p>This data helps us improve our services.</p>
+                        <p>You can opt out of data collection via <b>Yandex</b>’s opt-out tool: <a href='https://yandex.com/support/metrica/general/opt-out.html' target='_blank'>https://yandex.com/support/metrica/general/opt-out.html</a></p>
+                    </div>
+                    <div class='isl_legal_footer'>
+                        <button class='isl_legal_btn isl_legal_btn--leave' onclick='window.location.href = "about:blank"'>Leave</button>
+                        <button class='isl_legal_btn isl_legal_btn--accept' onclick='acceptLegal()'>Accept</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type='text/javascript' src='js/terms.js'></script>
 <script>
-    const islHolder = document.querySelector('.isl_holder');
+    const islHolder = document.querySelector('.isl_holder--main');
     const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
 
     function setIOSHeight() {
