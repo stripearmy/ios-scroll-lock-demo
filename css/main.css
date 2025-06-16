@@ -378,7 +378,7 @@ html.isl_simple_html body {
     margin: auto;
 }
 
-@media (pointer: fine) {
+@media (hover: hover) and (pointer: fine) {
     .isl_legal {
         max-width: 400px;
         max-height: max-content;
